@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "TicTacToe.API": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "api/games",
+      "applicationUrl": "https://localhost:7113;http://localhost:5289",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+}

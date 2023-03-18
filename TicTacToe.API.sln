@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.API", "TicTacToe.API\TicTacToe.API.csproj", "{07CA74F2-7BA2-4C4E-A36D-C4701E72F13A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Domain", "TicTacToe.Domain\TicTacToe.Domain.csproj", "{29F287FA-2238-45A7-92EE-88E8E2A1C7E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Infrastructure", "TicTacToe.Infrastructure\TicTacToe.Infrastructure.csproj", "{600C3C45-C726-4EC8-8693-7F57E07B03E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Application", "TicTacToe.Application\TicTacToe.Application.csproj", "{8E0B0242-F5A3-4604-B658-06C2EB2BA331}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Abstractions", "TicTacToe.Abstractions\TicTacToe.Abstractions.csproj", "{0A14C80C-E90B-468F-A050-6B5FEF6874B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe.Contracts", "TicTacToe.Contracts\TicTacToe.Contracts.csproj", "{B94D73EE-B051-4401-8DE6-EB059DD134B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7DEE029-33A2-40AC-B9AC-93E3D40D13CA}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07CA74F2-7BA2-4C4E-A36D-C4701E72F13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CA74F2-7BA2-4C4E-A36D-C4701E72F13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CA74F2-7BA2-4C4E-A36D-C4701E72F13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CA74F2-7BA2-4C4E-A36D-C4701E72F13A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F287FA-2238-45A7-92EE-88E8E2A1C7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F287FA-2238-45A7-92EE-88E8E2A1C7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F287FA-2238-45A7-92EE-88E8E2A1C7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F287FA-2238-45A7-92EE-88E8E2A1C7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{600C3C45-C726-4EC8-8693-7F57E07B03E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{600C3C45-C726-4EC8-8693-7F57E07B03E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{600C3C45-C726-4EC8-8693-7F57E07B03E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{600C3C45-C726-4EC8-8693-7F57E07B03E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0B0242-F5A3-4604-B658-06C2EB2BA331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0B0242-F5A3-4604-B658-06C2EB2BA331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0B0242-F5A3-4604-B658-06C2EB2BA331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0B0242-F5A3-4604-B658-06C2EB2BA331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A14C80C-E90B-468F-A050-6B5FEF6874B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A14C80C-E90B-468F-A050-6B5FEF6874B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A14C80C-E90B-468F-A050-6B5FEF6874B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A14C80C-E90B-468F-A050-6B5FEF6874B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94D73EE-B051-4401-8DE6-EB059DD134B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94D73EE-B051-4401-8DE6-EB059DD134B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94D73EE-B051-4401-8DE6-EB059DD134B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94D73EE-B051-4401-8DE6-EB059DD134B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {143CEBCA-5CA9-45D0-B6BA-82BF621DBFEB}
+	EndGlobalSection
+EndGlobal

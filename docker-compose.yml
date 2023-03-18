@@ -1,0 +1,61 @@
+version: '3.9'
+
+services:
+  tictactoe-api:
+    container_name: tictactoe-api
+    image: tictactoe-api
+    ports: 
+      - "8090:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Deployment
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+      pgadmin:
+        condition: service_started
+    
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: TicTacToeDockerDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: PostgresPassword
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tttuser -d tttpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    depends_on:
+      pgadmin:
+        condition: service_started
+    networks:
+      tictactoe-network:
+  
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: default_email@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: default_password
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    restart: unless-stopped
+    networks:
+      tictactoe-network:
+
+
+volumes:
+  pgadmin:  
+  
+networks:
+  tictactoe-network:
+    driver: bridge
