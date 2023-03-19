@@ -71,7 +71,7 @@ namespace TicTacToe.Application.Services
 			var game = _mapper.Map<Game>(command);
 			bluePlayer.GamesLikeBluePlayer.InitIfNullAndAdd(game);
 			redPlayer.GamesLikeRedPlayer.InitIfNullAndAdd(game);
-			game.PlayerTurn = new Random().Next(1, 2) % 2 == 0 ? bluePlayer.Id : redPlayer.Id;
+			game.PlayerTurn = bluePlayer.Id;
 
 			await _dbContext.Games.AddAsync(game);
 			await _dbContext.SaveChangesAsync();
@@ -117,22 +117,20 @@ namespace TicTacToe.Application.Services
 				return new OperationResult<GameResponse>(_mapper.Map<GameResponse>(game), false).AddMetadata(GameServiceErrors.CellMarked);
 			}
 
+			var newRow = game.CurrentState[(command.Cell - 1) / 3].ToCharArray();
 			if (game.BluePlayerId == player.Id)
 			{
-				var newRow = game.CurrentState[(command.Cell - 1) / 3].ToCharArray();
 				newRow[(command.Cell - 1) % 3] = 'X';
-				game.CurrentState[(command.Cell - 1) / 3] = new string(newRow);
 				game.PlayerTurn = game.RedPlayerId;
 			}
 			else
 			{
-				var newRow = game.CurrentState[(command.Cell - 1) / 3].ToCharArray();
 				newRow[(command.Cell - 1) % 3] = '0';
-				game.CurrentState[(command.Cell - 1) / 3] = new string(newRow);
 				game.PlayerTurn = game.BluePlayerId;
 			}
 
 			game.StepCount++;
+			game.CurrentState[(command.Cell - 1) / 3] = new string(newRow);
 			if (game.Status == GameStatus.Planned)
 			{
 				game.Status = GameStatus.Started;
@@ -153,7 +151,7 @@ namespace TicTacToe.Application.Services
 			var game = await _dbContext.Games.FirstOrDefaultAsync(x => x.Id == id);
 			if (game is null)
 			{
-				return new OperationResult<Guid>(id, false);
+				return new OperationResult<Guid>(id, false).AddMetadata(GameServiceErrors.GameNotFound);
 			}
 
 			_dbContext.Games.Remove(game);

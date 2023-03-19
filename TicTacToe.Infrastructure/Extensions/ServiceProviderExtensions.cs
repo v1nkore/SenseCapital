@@ -57,7 +57,7 @@ namespace TicTacToe.Infrastructure.Extensions
 						{
 							BluePlayerId = players[3].Id,
 							RedPlayerId = players[2].Id,
-							PlayerTurn = players[2].Id,
+							PlayerTurn = players[3].Id,
 						}
 					};
 

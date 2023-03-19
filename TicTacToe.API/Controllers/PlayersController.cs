@@ -53,6 +53,8 @@ namespace TicTacToe.API.Controllers
 		}
 
 		[HttpDelete("{id:guid}")]
+		[ProducesResponseType(typeof(IOperationResult<PlayerResponse>), StatusCodes.Status200OK)]
+		[ProducesResponseType(typeof(IOperationResult<PlayerResponse>), StatusCodes.Status400BadRequest)]
 		public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
 		{
 			var response = await _playerService.DeleteAsync(id);
