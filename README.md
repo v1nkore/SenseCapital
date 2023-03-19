@@ -9,9 +9,9 @@ All data is sent and received as JSON, and accessed from:
 ## Run the project
 You will need the following tools
 
-* [Visual Studio 2022]()
-* [.Net 6 or later]()
-* [Docker Desktop]()
+* [Visual Studio 2022](https://visualstudio.microsoft.com/ru/vs/)
+* [.Net 6 or later](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ## Installing
 Follow these steps to get your development environment set up:
